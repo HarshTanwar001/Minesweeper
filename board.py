@@ -1,5 +1,6 @@
 from piece import Piece
 from random import random
+import math
 
 
 class Board:
@@ -32,7 +33,7 @@ class Board:
         return self.size
 
     def get_piece(self, position):
-        return self.board[position[0]][position[1]]
+        return self.board[math.floor(position[0])][math.floor(position[1])]
 
     def set_neighbors(self):
         for row in range(self.size[0]):

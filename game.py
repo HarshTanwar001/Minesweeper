@@ -3,14 +3,16 @@ import pygame
 
 
 class Game:
+
     def __init__(self, board, screen_size):
         self.board = board
         self.screen_size = screen_size
-        self.piece_size = self.screen_size[0] // self.board.getSize()[1], self.screen_size[1] // self.board.getSize()[0]
+        self.piece_size = self.screen_size[0] / self.board.getSize()[1], self.screen_size[1] / self.board.getSize()[0]
         self.load_images()
 
     def run(self):
         pygame.init()
+        pygame.display.set_caption("Minesweeper")
         self.screen = pygame.display.set_mode(self.screen_size)
         running = True
 
