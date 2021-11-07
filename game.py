@@ -24,7 +24,12 @@ class Game:
                     position = pygame.mouse.get_pos()
                     right_click = pygame.mouse.get_pressed()[2]
                     self.handle_click(position, right_click)
-
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_SPACE:
+                        for row in range(self.board.size[0]):
+                            for col in range(self.board.size[1]):
+                                piece = self.board.get_piece([row, col])
+                                piece.click()
             self.draw()
             pygame.display.flip()
 
